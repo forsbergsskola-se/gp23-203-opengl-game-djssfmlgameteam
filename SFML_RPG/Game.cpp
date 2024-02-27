@@ -25,6 +25,13 @@ Game::~Game()
 	delete this->window;
 }
 
+void Game::updateDeltaTime()
+{
+    // Updates the deltatime variable with the time it takes to update and render one frame.
+    this->deltaTime = this->deltaTimeClock.restart().asSeconds();
+
+}
+
 // Updates SFMLEvents
 void Game::updateSFMLEvents()
 {
@@ -59,6 +66,7 @@ void Game::run()
 {
     while (this->window->isOpen())
     {
+        this->updateDeltaTime();
         this->update();
         this->render();
     }

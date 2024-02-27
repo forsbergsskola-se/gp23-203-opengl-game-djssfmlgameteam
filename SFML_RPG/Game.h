@@ -1,15 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <iostream>
-#include <ctime>
-#include <cstdlib>
-
-#include"SFML/System.hpp"
-#include"SFML/Window.hpp"
-#include"SFML/Graphics.hpp"
-#include"SFML/Audio.hpp"
-#include"SFML/Network.hpp"
+#include "State.h"
 
 class Game
 {
@@ -18,6 +10,9 @@ private:
 	// Variables
 	sf::RenderWindow *window; // Pointer to the SFML window.
 	sf::Event sfEvent;
+
+	sf::Clock deltaTimeClock;
+	float deltaTime;
 
 	// Initialization
 	void initWindow(); // Initialize the SFML window.
@@ -30,6 +25,7 @@ public:
 	virtual ~Game();
 
 	//My public member Functions
+	void updateDeltaTime();
 	void updateSFMLEvents(); // Updates SFML Events
 	void update(); // Update gamelogic and such.
 	void render(); // Rendering the game objects
