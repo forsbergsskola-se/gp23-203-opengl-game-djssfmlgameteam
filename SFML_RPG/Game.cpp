@@ -10,7 +10,51 @@
 // Creates the winwod using RenderWindow. Can set the size of the window here.
 void Game::initWindow()
 {
-	this->window = new sf::RenderWindow(sf::VideoMode(800, 600), "c++ SFML RPG Game");
+    std::ifstream ifs("window.ini");
+    
+    std::string title = "None";
+    std::cout << "Title: " << title << std::endl;
+
+    sf::VideoMode window_bounds(800, 600);
+    unsigned framerate_Limit = 120;
+    bool vertical_synch_enabled = false;
+
+    if (ifs.is_open())
+    {
+        std::cout << "File opened successfully!" << std::endl;
+        if (std::getline(ifs, title))
+        {
+            std::cout << "Title read from file: " << title << std::endl;
+            ifs >> window_bounds.width >> window_bounds.height;
+            ifs >> framerate_Limit;
+            ifs >> vertical_synch_enabled;
+        }
+        else
+        {
+            std::cerr << "Failed to read title from file!" << std::endl;
+        }
+
+    }
+
+    // Hardcoding the title since SFML is acting stupid.
+    // I was able to get the title from the file and add it to the variable.
+    // But using the variable does not work and the string does not even show the default value....
+    // This suggests that for some reason SFML can't read the string variable for title.
+    // Maybe have to tweek it somehow or use char array... But...
+    // I might take a look at this at another time.
+    // Or another life.
+    this->window = new sf::RenderWindow(sf::VideoMode(window_bounds), "DJ RPG GAME"); 
+
+    this->window->setFramerateLimit(framerate_Limit); // Value loads correctly from file
+    std::cout << framerate_Limit << std::endl;
+    this->window->setVerticalSyncEnabled(vertical_synch_enabled); // Value loads correctly from file
+    std::cout << vertical_synch_enabled << std::endl;
+
+    ifs.close();
+
+
+
+    std::cout << "Window configuration loaded successfully!" << std::endl;
 }
 
 // Constructor: Initializes the game window.
