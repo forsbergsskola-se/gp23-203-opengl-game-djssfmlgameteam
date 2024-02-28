@@ -81,6 +81,12 @@ Game::~Game()
     }
 }
 
+// Funcitions
+void Game::endApplication()
+{
+    std::cout << "Ending Application" << std::endl;
+}
+
 void Game::updateDeltaTime()
 {
     // Updates the deltatime variable with the time it takes to update and render one frame.
@@ -109,6 +115,19 @@ void Game::update()
     if (!this->states.empty())
     {
         this->states.top()->update(this->deltaTime);
+
+        if (this->states.top()->getQuit())
+        {
+            this->states.top()->endState();
+            delete this->states.top();
+            this->states.pop();
+        }
+    }
+    // Application end
+    else
+    {
+        this->endApplication();
+        this->window->close();
     }
 }
 

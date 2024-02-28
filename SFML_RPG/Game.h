@@ -26,13 +26,21 @@ public:
 	Game();
 	virtual ~Game();
 
-	//My public member Functions
+	// My public member Functions
+	
+	// Regular
+	void endApplication();
+
+	// Update
 	void updateDeltaTime();
 	void updateSFMLEvents(); // Updates SFML Events
 	void update(); // Update gamelogic and such.
+	
+	// Render
 	void render(); // Rendering the game objects
-	void run(); // Runs the game loop.
 
+	// Core
+	void run(); // Runs the game loop.
 };
 
 #endif
