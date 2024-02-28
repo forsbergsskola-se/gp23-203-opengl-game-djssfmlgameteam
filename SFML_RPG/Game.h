@@ -1,7 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "State.h"
+#include "GameState.h"
 
 class Game
 {
@@ -14,11 +14,13 @@ private:
 	sf::Clock deltaTimeClock;
 	float deltaTime;
 
+	std::stack<State*> states;
+
 	// Initialization
 	void initWindow(); // Initialize the SFML window.
+	void initStates();
 
 	// Constructors/Destructors
-
 
 public:
 	Game();

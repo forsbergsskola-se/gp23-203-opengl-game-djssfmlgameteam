@@ -45,28 +45,40 @@ void Game::initWindow()
     // Or another life.
     this->window = new sf::RenderWindow(sf::VideoMode(window_bounds), "DJ RPG GAME"); 
 
+
+
+    ifs.close();
+
     this->window->setFramerateLimit(framerate_Limit); // Value loads correctly from file
     std::cout << framerate_Limit << std::endl;
     this->window->setVerticalSyncEnabled(vertical_synch_enabled); // Value loads correctly from file
     std::cout << vertical_synch_enabled << std::endl;
 
-    ifs.close();
-
-
-
     std::cout << "Window configuration loaded successfully!" << std::endl;
+}
+
+void Game::initStates()
+{
+    this->states.push(new GameState(this->window));
 }
 
 // Constructor: Initializes the game window.
 Game::Game()
 {
     this->initWindow();
+    this->initStates();
 }
 
 // Destructor to clean up the allocated memory for the window.
 Game::~Game() 
 {
 	delete this->window;
+
+    while (!this->states.empty())
+    {
+       delete this->states.top();
+       this->states.pop();
+    }
 }
 
 void Game::updateDeltaTime()
@@ -93,6 +105,11 @@ void Game::updateSFMLEvents()
 void Game::update()
 {
     this->updateSFMLEvents();
+
+    if (!this->states.empty())
+    {
+        this->states.top()->update(this->deltaTime);
+    }
 }
 
 // Renders gameobjects
@@ -102,6 +119,10 @@ void Game::render()
     this->window->clear();
 
     // Render items
+    if (!this->states.empty())
+    {
+        this->states.top()->render();
+    }
     this->window->display();
 }
 
