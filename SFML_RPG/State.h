@@ -17,7 +17,7 @@ public:
 	virtual void checkForQuit();
 	virtual void endState() = 0;
 
-	virtual void updateKeybinds(const float &deltaTime) = 0;
+	virtual void updateInput(const float &deltaTime) = 0;
 	virtual void update(const float& deltaTime) = 0;
 	virtual void render(sf::RenderTarget *target = NULL) = 0;
 };

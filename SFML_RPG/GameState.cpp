@@ -1,4 +1,6 @@
 #include "GameState.h"
+using namespace std;
+
 
 GameState::GameState(sf::RenderWindow* window)
 	: State(window)
@@ -14,34 +16,54 @@ GameState::~GameState()
 
 void GameState::endState()
 {
-	std::cout << "Ending Gamestate" << std::endl;
+	cout << "Ending Gamestate" << endl;
 }
 
-void GameState::updateKeybinds(const float &deltaTime)
+void GameState::updateInput(const float &deltaTime)
 {
 	this->checkForQuit();
+
+	// Player Input
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+		this->player.move(deltaTime, -1.f, 0.f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+		this->player.move(deltaTime, 1.f, 0.f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
+		this->player.move(deltaTime, 0.f, -1.f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		this->player.move(deltaTime, 0.f, 1.f);
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::I))
+	{
+		cout << "Open Inventory" << endl;
+	}
 }
 
 void GameState::update(const float &deltaTime)
 {
-	this->updateKeybinds(deltaTime);
+	this->updateInput(deltaTime);
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
-		std::cout << "A was pressed" << std::endl;
+		cout << "A was pressed" << endl;
 	}
 	this->player.update(deltaTime);
 }
 
 void GameState::render(sf::RenderTarget *target)
 {
-	if (target)
+	if (!target)
 	{
-
+		target = this->window;
 	}
-	else
-	{
-	this->player.render(this->window);
-	}
+	this->player.render(target);
 
 }

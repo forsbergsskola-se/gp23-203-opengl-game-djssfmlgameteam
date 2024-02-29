@@ -16,9 +16,12 @@ private:
 
 	std::stack<State*> states;
 
+	std::map<char*, int> supportedKeys;
+
 	// Initialization
 	void initWindow(); // Initialize the SFML window.
 	void initStates();
+	void initKeys();
 
 	// Constructors/Destructors
 

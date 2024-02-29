@@ -13,7 +13,7 @@ public:
     // Functions
     void endState();
 
-    void updateKeybinds(const float& deltaTime);
+    void updateInput(const float& deltaTime);
     void update(const float& deltaTime);
     void render(sf::RenderTarget* target = nullptr);
 };

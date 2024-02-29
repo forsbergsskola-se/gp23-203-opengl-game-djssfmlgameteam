@@ -62,6 +62,14 @@ void Game::initStates()
     this->states.push(new GameState(this->window));
 }
 
+void Game::initKeys()
+{
+    // this->supportedKeys.emplace("A", 0);
+    // this->supportedKeys.emplace("D", 0);
+    // this->supportedKeys.emplace("W", 0);
+    // this->supportedKeys.emplace("S", 0);
+}
+
 // Constructor: Initializes the game window.
 Game::Game()
 {
