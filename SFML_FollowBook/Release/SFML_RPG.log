@@ -1,0 +1,18 @@
+﻿  Entity.cpp
+  main.cpp
+C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_FollowBook\main.cpp(3,36): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_FollowBook\main.cpp(10,40): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_FollowBook\main.cpp(10,40): warning C4244:         with
+C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_FollowBook\main.cpp(10,40): warning C4244:         [
+C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_FollowBook\main.cpp(10,40): warning C4244:             T=unsigned int
+C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_FollowBook\main.cpp(10,40): warning C4244:         ]
+C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_FollowBook\main.cpp(10,28): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_FollowBook\main.cpp(10,28): warning C4244:         with
+C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_FollowBook\main.cpp(10,28): warning C4244:         [
+C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_FollowBook\main.cpp(10,28): warning C4244:             T=unsigned int
+C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_FollowBook\main.cpp(10,28): warning C4244:         ]
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 75 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  SFML_RPG.vcxproj -> C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_FollowBook\Release\SFML_FollowBook.exe
