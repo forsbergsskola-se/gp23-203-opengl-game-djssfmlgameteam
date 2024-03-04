@@ -1,10 +1,5 @@
 #include "MainMenuState.h"
 
-MainMenuState::MainMenuState(sf::RenderWindow* window)
-{
-
-}
-
 MainMenuState::~MainMenuState()
 {
 }

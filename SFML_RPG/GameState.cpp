@@ -5,7 +5,19 @@ using namespace std;
 GameState::GameState(sf::RenderWindow* window)
 	: State(window)
 {
+	if (!backGroundTexture.loadFromFile("grass.png"))
+	{
+		cout << "Could not load background texture!" << endl;
+	}
+	else
+	{
+	backGroundTexture.setRepeated(true);
+	backgroundSprite.setTexture(backGroundTexture);
 
+	sf::Vector2u windowSize = window->getSize();
+	backgroundSprite.setScale(static_cast<float>(windowSize.x) / backGroundTexture.getSize().x,
+		static_cast<float>(windowSize.y) / backGroundTexture.getSize().y);
+	}
 }
 
 GameState::~GameState() 
@@ -53,7 +65,7 @@ void GameState::update(const float &deltaTime)
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
-		cout << "A was pressed" << endl;
+	//	cout << "A was pressed" << endl;
 	}
 	this->player.update(deltaTime);
 }
@@ -64,6 +76,8 @@ void GameState::render(sf::RenderTarget *target)
 	{
 		target = this->window;
 	}
+
+	target->draw(backgroundSprite);
 	this->player.render(target);
 
 }

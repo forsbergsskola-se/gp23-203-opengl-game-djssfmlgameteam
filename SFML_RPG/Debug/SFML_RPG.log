@@ -1,5 +1,2 @@
-﻿  MainMenuState.cpp
-C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_RPG\MainMenuState.cpp(4,1): error C2512: 'State': no appropriate default constructor available
-  C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_RPG\State.h(4,7):
-  see declaration of 'State'
-  
+﻿  GameState.cpp
+  SFML_RPG.vcxproj -> C:\Projects\gp23-203-opengl-game-djssfmlgameteam\SFML_RPG\Debug\SFML_RPG.exe

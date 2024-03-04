@@ -3,7 +3,7 @@
 
 class MainMenuState : public State {
 public:
-    MainMenuState(sf::RenderWindow* window);
+    //MainMenuState(sf::RenderWindow* window);
     virtual ~MainMenuState();
 
     // Other member functions and variables

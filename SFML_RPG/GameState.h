@@ -4,6 +4,9 @@ class GameState :
     public State
 {
 private:
+    sf::Texture backGroundTexture;
+    sf::Sprite backgroundSprite;
+
     Entity player;
 
 public:
