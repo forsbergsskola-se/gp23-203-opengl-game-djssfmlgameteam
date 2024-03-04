@@ -78,6 +78,6 @@ void GameState::render(sf::RenderTarget *target)
 	}
 
 	target->draw(backgroundSprite);
-	this->player.render(target);
+	player.render(target);
 
 }

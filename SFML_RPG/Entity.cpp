@@ -1,10 +1,24 @@
 #include "Entity.h"
 
+using namespace std;
+
 Entity::Entity()
 {
-	this->shape.setSize(sf::Vector2f(50.f, 50.f));
-	this->shape.setFillColor(sf::Color::White);
-	this->movementSpeed = 100.f;
+	if (!playerTexture.loadFromFile("standing.png"))
+	{
+		cout << "Failed to load the player textures" << endl;
+	}
+	else
+	{
+		cout << "Player Texture loaded successfully!" << std::endl;
+		playerSprite.setTexture(playerTexture);
+		cout << "Texture size: " << playerTexture.getSize().x << "x" << playerTexture.getSize().y << std::endl;
+		playerSprite.setScale(.1f, .1f);
+		playerSprite.setPosition(100.f, 100.f);
+		
+		this->movementSpeed = 300.f;
+	}
+	 
 }
 
 Entity::~Entity()
@@ -14,7 +28,7 @@ Entity::~Entity()
 
 void Entity::move(const float &deltaTime, const float dir_x, const float dir_y)
 {
-	this->shape.move(dir_x * this->movementSpeed * deltaTime, dir_y * this->movementSpeed * deltaTime);
+	this->playerSprite.move(dir_x * this->movementSpeed * deltaTime, dir_y * this->movementSpeed * deltaTime);
 }
 
 void Entity::update(const float &deltaTime)
@@ -24,5 +38,5 @@ void Entity::update(const float &deltaTime)
 
 void Entity::render(sf::RenderTarget *target)
 {
-	target->draw(this->shape);
+	target->draw(this->playerSprite);
 }

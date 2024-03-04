@@ -142,8 +142,8 @@ void Game::update()
 // Renders gameobjects
 void Game::render()
 {
-
-    this->window->clear();
+    //this->window->clear();
+    window->clear(sf::Color::Black);
 
     // Render items
     if (!this->states.empty())

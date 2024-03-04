@@ -18,10 +18,10 @@
 class Entity
 {
 private:
-
-protected:
-    sf::RectangleShape shape;
+    sf::Texture playerTexture;
+    sf::Sprite playerSprite;
     float movementSpeed;
+protected:
 
 public:
     Entity();
