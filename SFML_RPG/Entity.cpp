@@ -41,9 +41,11 @@ void Entity::render(sf::RenderTarget *target)
 	target->draw(this->playerSprite);
 }
 
+/*
+Removed the update rotation stuff as i think i will go with sprites that are turned instead.
 void Entity::rotateSprite(float angle) 
 {
 	playerSprite.setRotation(angle);
 }
-
+*/
 

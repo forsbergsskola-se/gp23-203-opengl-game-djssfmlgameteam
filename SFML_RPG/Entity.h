@@ -33,7 +33,10 @@ public:
 
     virtual void update(const float& deltaTime);
     virtual void render(sf::RenderTarget* target);
+
+    /*
+Removed the update rotation stuff as i think i will go with sprites that are turned instead.
     void rotateSprite(float angle);
-    
+    */
 
 };

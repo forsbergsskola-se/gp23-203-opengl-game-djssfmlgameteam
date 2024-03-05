@@ -35,27 +35,23 @@ void GameState::updateInput(const float &deltaTime)
 {
 	this->checkForQuit();
 
-	sf::Vector2f movementDirection(0.f, 0.f);
 	// Player Input
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		movementDirection.x = -1.f;
+		this->player.move(deltaTime, -1.f, 0.f);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
-		movementDirection.x = 1.f;
+		this->player.move(deltaTime, 1.f, 0.f);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
-		movementDirection.y = -1.f;
+		this->player.move(deltaTime, 0.f, -1.f);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
-		movementDirection.y = 1.f;
+		this->player.move(deltaTime, 0.f, 1.f);
 	}
-
-	this->updateRotation(movementDirection);
-	player.move(deltaTime, movementDirection.x, movementDirection.y);
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::I))
 	{
@@ -86,8 +82,11 @@ void GameState::render(sf::RenderTarget *target)
 
 }
 
+/*
+Removed the update rotation stuff as i think i will go with sprites that are turned instead.
 void GameState::updateRotation(const sf::Vector2f& direction)
 {
 	float angle = std::atan2(direction.y, direction.x) * (180.f / pi);
 	player.rotateSprite(angle);
 }
+*/

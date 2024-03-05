@@ -9,7 +9,8 @@ private:
     sf::Sprite backgroundSprite;
 
     Entity player;
-    const float pi = 3.14159265f;
+    // There will be no pie today.
+    // const float pi = 3.14159265f;
 
 public:
     GameState(sf::RenderWindow *window);
@@ -21,6 +22,9 @@ public:
     void updateInput(const float& deltaTime);
     void update(const float& deltaTime);
     void render(sf::RenderTarget* target = nullptr);
+    /*
+    Removed the update rotation stuff as i think i will go with sprites that are turned instead.
     void updateRotation(const sf::Vector2f& direction);
+    */
 };
 
