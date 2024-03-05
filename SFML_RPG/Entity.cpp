@@ -40,3 +40,10 @@ void Entity::render(sf::RenderTarget *target)
 {
 	target->draw(this->playerSprite);
 }
+
+void Entity::rotateSprite(float angle) 
+{
+	playerSprite.setRotation(angle);
+}
+
+

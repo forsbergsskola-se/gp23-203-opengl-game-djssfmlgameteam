@@ -21,6 +21,7 @@ private:
     sf::Texture playerTexture;
     sf::Sprite playerSprite;
     float movementSpeed;
+    
 protected:
 
 public:
@@ -32,4 +33,7 @@ public:
 
     virtual void update(const float& deltaTime);
     virtual void render(sf::RenderTarget* target);
+    void rotateSprite(float angle);
+    
+
 };

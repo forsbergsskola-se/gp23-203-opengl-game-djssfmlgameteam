@@ -35,23 +35,27 @@ void GameState::updateInput(const float &deltaTime)
 {
 	this->checkForQuit();
 
+	sf::Vector2f movementDirection(0.f, 0.f);
 	// Player Input
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		this->player.move(deltaTime, -1.f, 0.f);
+		movementDirection.x = -1.f;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
-		this->player.move(deltaTime, 1.f, 0.f);
+		movementDirection.x = 1.f;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
-		this->player.move(deltaTime, 0.f, -1.f);
+		movementDirection.y = -1.f;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
-		this->player.move(deltaTime, 0.f, 1.f);
+		movementDirection.y = 1.f;
 	}
+
+	this->updateRotation(movementDirection);
+	player.move(deltaTime, movementDirection.x, movementDirection.y);
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::I))
 	{
@@ -80,4 +84,10 @@ void GameState::render(sf::RenderTarget *target)
 	target->draw(backgroundSprite);
 	player.render(target);
 
+}
+
+void GameState::updateRotation(const sf::Vector2f& direction)
+{
+	float angle = std::atan2(direction.y, direction.x) * (180.f / pi);
+	player.rotateSprite(angle);
 }

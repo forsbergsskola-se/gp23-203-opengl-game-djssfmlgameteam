@@ -9,6 +9,7 @@ private:
     sf::Sprite backgroundSprite;
 
     Entity player;
+    const float pi = 3.14159265f;
 
 public:
     GameState(sf::RenderWindow *window);
@@ -20,5 +21,6 @@ public:
     void updateInput(const float& deltaTime);
     void update(const float& deltaTime);
     void render(sf::RenderTarget* target = nullptr);
+    void updateRotation(const sf::Vector2f& direction);
 };
 
