@@ -20,6 +20,10 @@ class Entity
 private:
     sf::Texture playerTexture;
     sf::Sprite playerSprite;
+    sf::Sprite spriteLeft;
+    sf::Sprite spriteRight;
+    sf::Sprite spriteUp;
+    sf::Sprite spriteDown;
     float movementSpeed;
     
 protected:
