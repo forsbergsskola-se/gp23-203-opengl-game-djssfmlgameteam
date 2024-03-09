@@ -9,6 +9,7 @@ private:
     sf::Sprite backgroundSprite;
 
     Entity player;
+    Entity circle;
     // There will be no pie today.
     // const float pi = 3.14159265f;
 

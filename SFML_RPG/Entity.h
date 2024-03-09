@@ -24,22 +24,27 @@ private:
     sf::Sprite spriteRight;
     sf::Sprite spriteUp;
     sf::Sprite spriteDown;
-    float movementSpeed;
-    
-protected:
+    float movementSpeed
+        ;
+    sf::CircleShape circle;
+    float circleRadius;
 
 public:
     Entity();
     virtual ~Entity();
 
     // Functions
-    virtual void move(const float &deltaTime, const float x, const float y);
+    virtual void move(const float& deltaTime, const float x, const float y);
 
     virtual void update(const float& deltaTime);
     virtual void render(sf::RenderTarget* target);
+    sf::Vector2f getPlayerPosition() const;
+    sf::Vector2f getCirlcePosition() const;
+    sf::FloatRect getPlayerGlobalBounds() const;
+    float getCircleRadius() const;
 
     /*
-Removed the update rotation stuff as i think i will go with sprites that are turned instead.
+    Removed the update rotation stuff as i think i will go with sprites that are turned instead.
     void rotateSprite(float angle);
     */
 
