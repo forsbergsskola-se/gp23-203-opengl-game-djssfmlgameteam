@@ -3,16 +3,27 @@
 
 Description:
 This game is a botched attempt at making a RPG game.
+
 After the getting stuck on a million issues a million times in a week I realized that I would not be able to create a RPG game.
+
 I was also very put off by SFML being so slow and requiring way to much coding for things to happen.
+
 In Unity I can set up the same scene I did in SFML but instead of in 2 weeks it would take me 5 minutes.
+
 This bored and frustrated me.
+
 Especially after sinking 8 hours trying to get the game work with a sprite sheet for movement.
+
 I never got it to work and discarded all the code.
+
 I did not feel like I learned anything while doign SFML.
+
 So i divided up my time working on this "Game" and studying a great C++ course on udemy named: 
+
 Beginning C++ Programming - From Beginner to Beyond
+
 After the two weeks I have completed 153 / 305 lessons.
+
 I felt like doing the course was very fun and I filled in a lot of my c++ holes that I felt I had.
 
 Back to the "Game".
