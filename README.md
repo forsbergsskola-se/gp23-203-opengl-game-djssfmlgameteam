@@ -1,3 +1,6 @@
+
+![2024-03-11 23_06_00-Window](https://github.com/forsbergsskola-se/gp23-203-opengl-game-djssfmlgameteam/assets/89846079/d814b8e1-9753-4984-9d9b-5f46b66987b1)
+
 Description:
 This game is a botched attempt at making a RPG game.
 After the getting stuck on a million issues a million times in a week I realized that I would not be able to create a RPG game.
