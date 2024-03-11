@@ -32,6 +32,29 @@ Overall the experience with SFML can be summarized in one word "Tedious".
 
 One Class is documented:
 
+Used const for:
+
+void GameState::updateInput(const float& deltaTime)
+Ensuring it would not be modified within the function.
+
+Encapsulation:
+sf::Texture backGroundTexture;
+
+sf::Sprite backgroundSprite;
+
+Entity player;
+
+Entity circle;
+Are set to private.
+I also used a get method in the Entity class but not in this one.
+sf::Vector2f Entity::getPlayerPosition() const
+{
+    return playerSprite.getPosition();
+}
+
+header/cpp file usage:
+I used both cpp and h files for all the classes in my project.
+
 ```
 // Gamestate.h
 #pragma once
